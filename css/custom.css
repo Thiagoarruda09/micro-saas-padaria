@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'poppins';
+    src: url(../fontes/Poppins-Light.ttf);
+}
+html, body{
+    font-family: 'poppins';
+    
+}
+h2, th{
+    color: #3E3E3E
+}
+
+#Input_quantidade{
+    width: 15%;
+    height: 7vh;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#Input_preco{
+    width: 10%;
+    height: 7vh;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#Select_produtos{
+    width: 22%;
+    height: 7vh;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#button_add{
+    width: 25%;
+    background-color: #DDB892;
+    color: white;
+    border: 1px solid;
+    border-radius: 5px;
+}
+#button_add:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+    border:none;
+}
+#button_clear{
+    background-color: #A68A64;
+    border:none;
+}
+#button_clear:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+    border:none;
+}
+input::placeholder {
+    
+    padding-left: 5px;
+    font-size: 14px;
+    
+  }
+  input:focus{
+    outline: none;
+}
+select:focus {
+    outline: none;
+}
+
+.table-scroll {
+    max-height: 300px;      
+    overflow-y: auto;       
+    overflow-x: auto;      
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+  }
+#Caixa{
+    border: 1px solid #ccc;
+   margin-top: 14px;
+   border-radius: 5px;  
+}  
