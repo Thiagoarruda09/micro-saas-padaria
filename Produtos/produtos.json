@@ -4,10 +4,7 @@
       "id": "18d9",
       "nome": "biscoitos salgados"
     },
-    {
-      "id": "6fac",
-      "nome": "pão carioca"
-    },
+   
     {
       "id": "e862",
       "nome": "pão bola"
@@ -23,6 +20,15 @@
     {
       "id": "21f2",
       "nome": "cookies"
+    },
+    {
+      "id": "be99",
+      "nome": "pao carioca"
+    },
+    
+    {
+      "id": "65f4",
+      "nome": "pao doce"
     }
   ]
 }

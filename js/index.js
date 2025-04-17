@@ -70,6 +70,7 @@ function LimparCaixa(){
         return;
     }else{
         localStorage.removeItem("vendas");
+        localStorage.removeItem("total");
         TABLE_VENDAS.innerHTML = "";
         CAIXA_COUNT.innerHTML = "0.00";
     }
@@ -85,7 +86,7 @@ function contarVendar(){
         total += venda.preco 
     });
 
-    CAIXA_COUNT.innerHTML = `R$ ${total.toFixed(2)}`;
+    CAIXA_COUNT.innerHTML = ` ${total.toFixed(2)}`;
     localStorage.setItem("total", total.toFixed(2));
 }
 
