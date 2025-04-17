@@ -14,24 +14,31 @@
 
         <div class=" card card-body shadow-sm col-12">
             <h2>Registrar venda </h2>
-            <form onsubmit="AddVenda(event)" action="" class="d-flex flex-row col-12 gap-3">
-                <select name="" id="Select_produtos" >
-                    <option value="">Selecione o produto</option>
-
+            <form onsubmit="AddVenda(event)" action="" class="d-flex flex-column flex-md-row col-12 gap-3">
+  
+                <select id="Select_produtos" class="form-select w-100 w-md-auto h-100">
+                  <option value="">Selecione o produto</option>
                 </select>
-                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="button_add_produto">
-                    Adicionar produto
-                  </button>
-                
-                <input type="text" placeholder="Quantidade" id="Input_quantidade">
-                <input type="number" name="" id="Input_preco" placeholder="Preço" step="0.01" min="0" >
-                <button id="button_add">Adicionar venda</button>
-            </form>
+              
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="button_add_produto" class="btn btn-secondary w-100 w-md-auto">
+                  Adicionar produto
+                </button>
+              
+                <input type="text" placeholder="Quantidade" id="Input_quantidade" class="form-control w-100 w-md-auto">
+              
+                <input type="number" placeholder="Preço" id="Input_preco" step="0.01" min="0" class="form-control w-100 w-md-auto">
+              
+                <button id="button_add" type="submit" class="btn btn-primary w-100 w-md-auto">
+                  Adicionar venda
+                </button>
+              
+              </form>
+              
         </div>
         <hr>
         <div class="container ">
-            <div class="row d-flex flex-row col-12 gap-3">
-                <div class="col mt-3 col-7 table-scroll pt-3" id="Vendas">
+            <div class="row d-flex flex-column flex-md-row col-12 gap-3">
+                <div class="col mt-3 col-12 col-md-7 table-scroll pt-3" id="Vendas">
                     <table class="table table-white  table-hover border border-1 shadow-sm rounded">
                         <thead class="table-light ">
                             <tr>
@@ -48,7 +55,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-4" id="Caixa">
+                <div class="col-12 col-md-4" id="Caixa">
                     <h2 class="mt-3">Total de vendas do dia</h2>
                     <h1>R$ <span id="Caixa_caunt">0.00</span></h1>
                     <button class="btn btn-danger mt-3 mb-2" id="button_clear" onclick="LimparCaixa()">Limpar caixa</button>
