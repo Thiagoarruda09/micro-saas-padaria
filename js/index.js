@@ -57,6 +57,8 @@ function AddVenda(event){
 
 window.addEventListener("DOMContentLoaded", () => {
     const vendas = JSON.parse(localStorage.getItem("vendas")) || [];
+    const caixa = JSON.parse(localStorage.getItem("total")) || 0;
+    CAIXA_COUNT.innerHTML = ` ${caixa.toFixed(2)}`;
     vendas.forEach(venda => adicionarLinhaNaTabela(venda));
 });
 
@@ -84,6 +86,7 @@ function contarVendar(){
     });
 
     CAIXA_COUNT.innerHTML = `R$ ${total.toFixed(2)}`;
+    localStorage.setItem("total", total.toFixed(2));
 }
 
 
