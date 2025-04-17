@@ -16,7 +16,7 @@ function adicionarLinhaNaTabela(venda) {
     novaLinha.innerHTML = `
         <td>${venda.produto}</td>
         <td>${venda.quantidade}</td>
-        <td>${venda.preco}</td>
+        <td>${venda.preco.toFixed(2)}</td>
     `;
 
     TABLE_VENDAS.appendChild(novaLinha);
@@ -26,23 +26,30 @@ function adicionarLinhaNaTabela(venda) {
 function AddVenda(event){
     event.preventDefault();
 
+    //cria as variaveis que armazenam os valores dos inputs
+
     const produto = SELECT_PRODUTOS.value
     const quantidade = parseInt(INPUT_QUANTIDADE.value)
     const preco = parseFloat(INPUT_PRECO.value)
 
-
+   //cria um objeto com os valores dos inputs
     const novaVenda = {
         produto: produto,
         quantidade: quantidade,
         preco: preco
     }
+
+    //cria uma variavel que recupera o valor do localStorage e transforma em um array, caso não exista, cria um array vazio
     let vendas = JSON.parse(localStorage.getItem("vendas")) || [];
+
+    //adiciona o objeto criado acima no array
 
     vendas.push(novaVenda);
 
     localStorage.setItem("vendas", JSON.stringify(vendas));
 
     adicionarLinhaNaTabela(novaVenda);
+    contarVendar();
     SELECT_PRODUTOS.value = "";
     INPUT_QUANTIDADE.value = "";
     INPUT_PRECO.value = "";
@@ -62,9 +69,53 @@ function LimparCaixa(){
     }else{
         localStorage.removeItem("vendas");
         TABLE_VENDAS.innerHTML = "";
+        CAIXA_COUNT.innerHTML = "0.00";
     }
 
 
 }
+
+function contarVendar(){
+    const vendas = JSON.parse(localStorage.getItem("vendas")) || [];
+
+    let total = 0;
+    vendas.forEach(venda => {
+        total += venda.preco 
+    });
+
+    CAIXA_COUNT.innerHTML = `R$ ${total.toFixed(2)}`;
+}
+
+
+fetch("http://localhost:3000/produtos")
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(produto => {
+            const option = document.createElement("option");
+            option.value = produto.nome;
+            option.textContent = produto.nome;
+            SELECT_PRODUTOS.appendChild(option);
+        });
+    })
+
+function AdicionarProduto(){
+    let produto = {
+        nome: document.getElementById("Input_nome_produto").value
+    }
+
+    
+
+    fetch("http://localhost:3000/produtos", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(produto)
+    })
+    
+
+}
+
+
 
 

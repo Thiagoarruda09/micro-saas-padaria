@@ -1,0 +1,28 @@
+{
+  "produtos": [
+    {
+      "id": "18d9",
+      "nome": "biscoitos salgados"
+    },
+    {
+      "id": "6fac",
+      "nome": "pão carioca"
+    },
+    {
+      "id": "e862",
+      "nome": "pão bola"
+    },
+    {
+      "id": "7dc5",
+      "nome": "salgados variados"
+    },
+    {
+      "id": "4767",
+      "nome": "salgados folheados"
+    },
+    {
+      "id": "21f2",
+      "nome": "cookies"
+    }
+  ]
+}

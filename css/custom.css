@@ -29,6 +29,13 @@ body{
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+
+#Input_nome_produto{
+    width: 40%;
+    height: 7vh;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
 #Select_produtos{
     width: 22%;
     height: 7vh;
@@ -46,6 +53,20 @@ body{
     transform: scale(1.05);
     transition: 0.5s;
     border:none;
+}
+#button_add_produto{
+    background-color: #A68A64;
+    border:none;
+    border-radius: 5px;
+    color: white;
+
+}
+#button_cadastrar_produto{
+    background-color: #A68A64;
+    border:none;
+    border-radius: 5px;
+    color: white;
+    padding: 7px;
 }
 #button_clear{
     background-color: #A68A64;

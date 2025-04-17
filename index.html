@@ -17,12 +17,12 @@
             <form onsubmit="AddVenda(event)" action="" class="d-flex flex-row col-12 gap-3">
                 <select name="" id="Select_produtos" >
                     <option value="">Selecione o produto</option>
-                    <option >Pão Francês</option>
-                    <option >Pão de Forma</option>
-                    <option >Pão de Batata</option>
-                    <option >Pão de Queijo</option>
-                    <option >Pão Integral</option>
+
                 </select>
+                <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" id="button_add_produto">
+                    Adicionar produto
+                  </button>
+                
                 <input type="text" placeholder="Quantidade" id="Input_quantidade">
                 <input type="number" name="" id="Input_preco" placeholder="Preço" step="0.01" min="0" >
                 <button id="button_add">Adicionar venda</button>
@@ -55,6 +55,23 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Cadastrar produto</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="" onsubmit="AdicionarProduto(event)">
+                    <input type="text" placeholder="Nome do produto" id="Input_nome_produto" >
+                    <button id="button_cadastrar_produto">Adicionar produto</button>
+                  </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
 
     </main>
     <script src="js/index.js"></script>
