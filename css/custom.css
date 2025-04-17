@@ -103,3 +103,11 @@ select:focus {
     border-radius: 5px;
     
   }
+thead{
+    background-color: #A68A64;
+    color: white;
+}
+
+thead > tr > th{
+    color: white;
+}
